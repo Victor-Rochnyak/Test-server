@@ -1,2 +1,14 @@
+/*
+ * Головний файл стилів
+ */
+
+ @import './base/common';
+ @import './base/container';
+ @import './base/reset';
+ 
+ @import './utils/hidden';
+ @import './utils/variables';
+
+
 @import './common';
 @import './example';
