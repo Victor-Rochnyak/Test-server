@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = '74cf07cbcff58397c32fe332f07646fa';
@@ -12,13 +14,17 @@ export default class MoviesApiService {
     this.year = '';
     this.originalLanguage = '';
     this.vote = '';
+    this.sliderFilms = [];
   }
 
+  // slider-fetch
   async getPopularFilms() {
     try {
       const url = `${BASE_URL}movie/popular?api_key=${API_KEY}&language=${this.lang}&page=${this.page}`;
       const response = await axios.get(url);
-      return response.data;
+      this.sliderFilms = response.data.results;
+
+      return response.data.results;
     } catch (error) {
       Notify.failure('Oops, an error occurred');
     }
