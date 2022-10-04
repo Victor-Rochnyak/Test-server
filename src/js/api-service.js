@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
+// import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 
 const BASE_URL = 'https://api.themoviedb.org/3/';
