@@ -1,5 +1,6 @@
-// import './js/id';
 import "./js/slider";
+import "./js/gallery";
+// import './js/id';
 
 // import MoviesApiService from './js/api-service';
 

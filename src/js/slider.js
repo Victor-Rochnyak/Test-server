@@ -1,78 +1,59 @@
-
-import MoviesApiService from './api-service';
+import apiService from './api-service';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-const apiService = new MoviesApiService();
 
-const sliderContainer = document.querySelector('.swiper-slide');
-const sliderFetch = apiService
-  .getPopularFilms()
-  .then(results => renderSlider(results));
-// renderSlider(results)
+const sliderContainerRef = document.querySelector('.swiper-wrapper');
+const sliderFetch = apiService.getPopularFilms().then(results => {
+  renderSlider(results);
+});
 
 function renderSlider() {
   const markup = apiService.sliderFilms
     .map(
-      ({ id, poster_path, title }) =>
-        `<div class="">
-              <img class="slider__img"
+      ({ id, poster_path, title, vote_average, backdrop_path }) =>
+        `<div class="swiper-slider__wrapper swiper-slide">
+              <img class="slide-img"
               src="https://image.tmdb.org/t/p/w200${poster_path}" 
-              alt=${title} id=${id} 
-              loading="lazy" 
+              alt="${title}" "id=${id}" 
+              width=""
               />
+
           </div>`
     )
     .join('');
 
-  sliderContainer.innerHTML = markup;
-}
+    sliderContainerRef.innerHTML = markup;
+    
+    const swiper = new Swiper('.swiper', {
+      disableOnInteraction: true,
+      slidesPerView: 7,
+      slidesPerGroup: 1,
+      spaceBetween: 65,
+      speed:3500,
+      // centralSlides: true,
+      loop: true,
+      
+    
+      grabCursor: true,
+      effect: 'coverflow',
+      coverflowEffect: {
+        //modifier:5, //для mobile
+        depth: 70,
+        rotate: 8,
+        stretch: 50,
+        slideShadows: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter:true,
+    
+      },
+      // freeMode: true,
+    });
+  }
 
-//! var swiper = new Swiper('.mySwiper', {
-//   disableOnInteraction: true,
-//   slidesPerView: 7,
-//   spaceBetween: 40,
-//   slidesPerGroup: 1,
-//   centralSlides: true,
-//   loop: true,
-//   loopFillGroupWithBlank: true,
-//   grabCursor: true,
-//   speed: 1000,
-//   effect: 'coverflow',
-//   coverflowEffect: {
-//     rotate: 10,
-//     stretch: 50,
-//     slideShadows: true,
-//   },
-//   pagination: {
-//     clickable: true,
-//     el: '.swiper-pagination',
-//     // dynamicBullets: true,
-//     type: 'progressbar',
-//   },
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   },
-//   autoplay: {
-//     delay: 2000,
-//     disableOnInteraction: false,
-//   },
-//   // virtual: function () {
-//   //   let slide = [];
-//   //   for (let i = 0; i < 500; i++) {
-//   //     slide.push('.swiper-wrapper');
-//   //   }
-//   // },
-// });
-
-// let sliderBlock = document.querySelector('.card');
-
-// sliderBlock.addEventListenner('mouseenter', function (e) {
-//   swiper.params.autoplay.disableOnInteraction = false;
-//   swiper.params.autoplay.delay = 500;
-//   swiper.autoplay.stop();
-// });
-
-// sliderBlock.addEventListenner('mouseleave', function (e) {
-//   swiper.autoplay.start();
-// });

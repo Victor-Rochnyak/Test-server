@@ -1,0 +1,23 @@
+.gallery-section__container {
+  background: rgb(225, 199, 35);
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+.gallery-container {
+  margin: 5px;
+}
+.vote-average {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  color: white;
+}
+
+.gallery-container {
+  position: relative;
+}
