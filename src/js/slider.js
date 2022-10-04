@@ -15,7 +15,7 @@ function renderSlider() {
               <img class="slide-img"
               src="https://image.tmdb.org/t/p/w200${poster_path}" 
               alt="${title}" "id=${id}" 
-              width=""
+              width=200"
               />
 
           </div>`
@@ -53,7 +53,7 @@ function renderSlider() {
         pauseOnMouseEnter:true,
     
       },
-      // freeMode: true,
+      freeMode: true,
     });
   }
 
