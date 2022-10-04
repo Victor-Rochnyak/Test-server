@@ -1,4 +1,14 @@
+
 @import './common';
 @import './example';
 @import './components/slider';
 @import './gallery';
+
+@import './base/common';
+@import './base/container';
+@import './base/reset';
+@import './utils/hidden';
+@import './utils/variables';
+@import './layout/header';
+@import './layout/pagination';
+
