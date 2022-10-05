@@ -4,6 +4,7 @@ import './js/gallery';
 import './js/api-service';
 import './js/id';
 import './js/pagination';
+import './js/scroll';
 import MoviesApiService from './js/api-service';
 
 // import MoviesApiService from './js/api-service';
