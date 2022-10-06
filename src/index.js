@@ -1,5 +1,6 @@
 import './js/slider';
 import './js/gallery';
+import './js/loading-bar';
 
 import './js/api-service';
 import './js/id';
