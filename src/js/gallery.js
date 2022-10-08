@@ -4,12 +4,12 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 const galleryContainerRef = document.querySelector(
   '.gallery-section__container'
 );
-const galleryFetch = apiService.getTrendFilmsgetTrendFilms().then(results => {
+const galleryFetch = apiService.getTrendFilms().then(results => {
   renderGallery(results);
   console.log(results);
 });
 
-function renderGallery() {
+export function renderGallery() {
   const markup = apiService.galleryFilms
     .map(
       ({ id, poster_path, title, vote_average }) => `

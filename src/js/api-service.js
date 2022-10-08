@@ -6,7 +6,8 @@ const BASE_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = '74cf07cbcff58397c32fe332f07646fa';
 
 
- export class MoviesApiService {
+
+ class MoviesApiService {
   constructor() {
     this.page = 1;
     this.searchQuery = '';
@@ -32,7 +33,7 @@ const API_KEY = '74cf07cbcff58397c32fe332f07646fa';
     }
   }
   // gallery-fetch
-  async getTrendFilmsgetTrendFilms() {
+  async getTrendFilms() {
     try {
       const url = `${BASE_URL}trending/movie/week?api_key=${API_KEY}&language=${this.lang}`;
       const response = await axios.get(url);
@@ -128,8 +129,11 @@ const API_KEY = '74cf07cbcff58397c32fe332f07646fa';
   }
 }
 
+
 const apiService = new MoviesApiService();
 export default apiService;
+
+
 // export default class ApiService {
 //   static API_KEY = '74cf07cbcff58397c32fe332f07646fa';
 //   static BASE_URL = 'https://api.themoviedb.org/3';
