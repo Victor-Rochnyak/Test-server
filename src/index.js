@@ -1,16 +1,11 @@
+import './js/api/api';
+import './js/header/header';
 import './js/slider';
-import './js/gallery';
-import './js/loading-bar';
-
-import './js/api-service';
-import './js/id';
-import './js/pagination';
+import './js/components/loader';
+// import './js/components/sliderHero';
+import './js/gallery/gallaryCard';
+import './js/gallery/local-storage';
+import './js/footer/footer';
+import './js/pagination/pagination';
 import './js/scroll';
-import MoviesApiService from './js/api-service';
-
-// import MoviesApiService from './js/api-service';
-
-// const apiService = new MoviesApiService();
-// apiService.getTrendFilmsgetTrendFilms();
-// apiService.getFilmsByName();
-// apiService.getFilteredMovies();
+import './js/gallery/modal-form';
