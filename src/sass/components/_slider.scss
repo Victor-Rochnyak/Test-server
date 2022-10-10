@@ -1,16 +1,18 @@
 .slider-section {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  // padding-top: 60px;
+  // padding-bottom: 60px;
   background-size: cover;
   background-repeat: no-repeat;
-  background: rgb(225, 199, 35);
-  //   background-image: url('https://img.freepik.com/premium-vector/ukraine-flag-with-brush-concept-and-halftone-effect-flag-of-ukraine-in-grunge-style-pray-for-ukraine-hand-painted-brush-flag-of-ukraine-country_115973-3814.jpg?w=996');
+  // background: rgb(0, 0, 0);
+  // background-image: url('https://img.freepik.com/premium-vector/ukraine-flag-with-brush-concept-and-halftone-effect-flag-of-ukraine-in-grunge-style-pray-for-ukraine-hand-painted-brush-flag-of-ukraine-country_115973-3814.jpg?w=996');
   // background-image: url('https://img.freepik.com/premium-vector/ukraine-flag-with-brush-concept-flag-of-ukraine-in-grunge-style-pray-for-ukraine-hand-painted-brush-flag-of-ukraine-country_115973-3875.jpg?w=996');
 }
 
 .swiper {
   width: 100%;
   height: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .swiper-slide {
@@ -32,7 +34,14 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-  color: white;
+  color: rgba(255, 120, 0);
+  border: 1px solid rgba(255, 120, 0);
+  border-radius: 5px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color:rgba(94, 68, 45, 0.6);
 }
 
 :root {
@@ -48,27 +57,32 @@
 }
 
 .swiper-slider__wrapper {
+  box-shadow: 0px 0px 15px 2px rgb(94, 94, 94);
+
   list-style: none;
+  border-radius: 5px;
   max-width: 100%;
 }
 
 .swiper-slider__wrapper:before {
   content: '';
+  border-radius: 15px;
   display: block;
   box-shadow: 0px 0px 34px 1px rgba(255, 204, 0, 1);
 }
 
 .slide-img {
+  border-radius: 5px;
   background-size: contain;
   background-position: center;
   filter: brightness(1.2) saturate(1) contrast(1);
   transform-origin: center;
   transform: scale(1) translateZ(0);
-  transition: filter 200ms linear, transform 200ms linear, scale 250ms;
+  transition: filter 300ms linear, transform 200ms linear, scale 250ms;
 }
 
 .image-slider__wrapper:hover > .swiper-slider__wrapper:not(:hover) .slide-img {
-  filter: brightness(.6) saturate(1) contrast(1) blur(1px);
+  filter: brightness(0.6) saturate(1) contrast(1) blur(1px);
 }
 
 @media screen and (max-width: 767.98px) {
@@ -79,77 +93,5 @@
 
 .slide-img:hover {
   transform: scale(1.08) translateZ(0);
+  box-shadow: 0px 0px 25px 10px rgba(255, 120, 0);
 }
-
-// ------------------------------------------------------------------------------------------------------------------------
-// rating
-// <div class="skill">
-// <div class="gallery-container__rating outer">
-//   <div class="inner">
-//     <div class='number'>${vote_average}</div>
-//   </div>
-// </div>
-// <svg class="svg-circle" xmlns="http://www.w3.org/2000/svg" version="1.1" width="50" height="50">
-//   <defs>
-//     <linearGradient id="GradientColor">
-//         <stop class="color-average" offset="0%" stop-color="#6ffc03" />
-//   </linearGradient>
-//   </defs>
-//   <circle id="circle" transform='rotate(-90)' transform-origin="50% 50%" cx="25" cy="25" r="22.5" stroke-linecap="round"/>
-//  </svg>
-
-// </div>
-// 
-// =============================================================
-// .skill {
-//   position: relative;
-//   width: 50px;
-//   height: 50px;
-  // 
-// }
-// .outer {
-//   width: 50px;
-//   height: 50px;
-//   padding: 4.8px;
-//   box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
-//     -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
-//   border-radius: 50%;
-// }
-// .inner {
-//   height: 40px;
-//   width: 40px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
-//     inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
-//     -0.5px -0.5px 0px rgba(255, 255, 255, 1),
-//     0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
-
-//   border-radius: 50%;
-// }
-// 
-// .number {
-//   font-weight: 550;
-//   color: white;
-//   font-size: 12px;
-// }
-// circle {background-color:tomato;
-//   fill: none;
-//   stroke: url(#GradientColor);
-//   stroke-width: 4.8px;
-//   // stroke-dasharray: 260;
-//   // stroke-dashoffset: 260;
-//   background-color:tomato;
-//   animation: anim 1.5s linear forwards;
-// }
-// .svg-circle {
-//   position: absolute;
-//   top: 0;
-//   left: 0;  
-// }
-// @keyframes anim {
-//   100% {
-//     stroke-dashoffset: 120;
-//   }
-// }

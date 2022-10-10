@@ -1,18 +1,23 @@
-// import apiService from './api-service';
+// import MoviesApiService from './api/api';
+// // import { URL_TRENDING_FILMS } from '../api/baseUrls';
 // import { Notify } from 'notiflix/build/notiflix-notify-aio';
-
+// import { URL_POSTER } from './api/baseUrls';
+// const moviesApiService = new MoviesApiService();
 // const sliderContainerRef = document.querySelector('.swiper-wrapper');
-// const sliderFetch = apiService.getPopularFilms().then(results => {
+// const sliderFetch = moviesApiService.fetchTrendingMovies().then((results) => {
 //   renderSlider(results);
 // });
 
+
 // function renderSlider() {
-//   const markup = apiService.sliderFilms
+// export function renderSlider() {
+
+//   const markup = moviesApiService.sliderFilms
 //     .map(
-//       ({ id, poster_path, title, vote_average, backdrop_path }) =>
+//       ({ id, poster_path, title }) =>
 //         `<div class="swiper-slider__wrapper swiper-slide">
 //               <img class="slide-img"
-//               src="https://image.tmdb.org/t/p/w200${poster_path}" 
+//               src="${URL_POSTER}/${poster_path}" 
 //               alt="${title}" "id=${id}" 
 //               width=""
 //               />
@@ -20,15 +25,15 @@
 //           </div>`
 //     )
 //     .join('');
-
-//   sliderContainerRef.innerHTML = markup;
+    
+//     sliderContainerRef.insertAdjacentHTML('beforeend', markup);
 
 //   const swiper = new Swiper('.swiper', {
 //     disableOnInteraction: true,
 //     slidesPerView: 7,
 //     slidesPerGroup: 1,
 //     spaceBetween: 65,
-//     speed: 3500,
+//     speed: 2500,
 //     // centralSlides: true,
 //     loop: true,
 
@@ -46,18 +51,18 @@
 //       prevEl: '.swiper-button-prev',
 //     },
 //     autoplay: {
-//       delay: 100,
+//       delay: 1,
 //       disableOnInteraction: false,
 //       pauseOnMouseEnter: true,
 //     },
-//     // freeMode: true,
+//     freeMode: true,
 
 //     breakpoints: {
 //       768: {
 //         loop: true,
 //         slidesPerView: 3,
-//         slidesPerGroup: 3,
-//         spaceBetween: 65,
+//         slidesPerGroup: 1,
+//         spaceBetween: 60,
 //         disableOnInteraction: true,
 //         navigation: {
 //           enabled: true,
@@ -85,12 +90,4 @@
 //       },
 //     },
 //   });
-  
-// }  
-
-// const swiperSlideRef = document.querySelector('.logo-title');
-// var audio = new Audio('./audio/odinochnyiy-gluhoy-schelchok.mp3');
-
-// swiperSlideRef.addEventListenner('mouseenter', function() {
-//   audio.play()
-// });
+// }
